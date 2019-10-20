@@ -8,7 +8,7 @@ const forecast = (latitude, longitude, callback) =>{
         }else if(body.error){
             callback('Invalid input coordinates', undefined)
         }else{
-            callback(undefined, body.daily.data[0].summary +' It is currently '+ body.currently.temperature + ' degree celsius out there with ' + body.currently.precipProbability + '% probability of rain.')
+            callback(undefined, 'Max: ' + body.daily.data[0].temperatureHigh + 'º C     Min: ' + body.daily.data[0].temperatureLow + 'º C. ' + body.daily.data[0].summary +' It is currently '+ body.currently.temperature + ' º C out there with ' + body.currently.precipProbability + '% probability of rain.')
         }
     })
 }
